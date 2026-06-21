@@ -125,27 +125,9 @@ if "last_analyzed_image" not in st.session_state:
 if "selected_recipe_id" not in st.session_state:
     st.session_state.selected_recipe_id = None
 
-# Sidebar - API Key override and metadata
+# Sidebar - Navigation and Metadata
 with st.sidebar:
     st.image("https://img.icons8.com/clouds/200/000000/cooking-book.png", width=120)
-    st.title("Settings")
-    
-    # Enable entering Groq API key directly via Streamlit interface
-    api_key_env = os.getenv("GROQ_API_KEY", "")
-    if api_key_env == "your_key":
-        api_key_env = ""
-        
-    user_api_key = st.text_input(
-        "Groq API Key", 
-        value=st.session_state.get("groq_api_key", api_key_env),
-        type="password",
-        help="Paste your Groq API key here. It will override the one in your .env file."
-    )
-    if user_api_key:
-        st.session_state.groq_api_key = user_api_key
-        os.environ["GROQ_API_KEY"] = user_api_key
-        
-    st.markdown("---")
     st.markdown("### Navigation")
     
     # We display simple navigation buttons
