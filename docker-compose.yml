@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: ai_recipe_generator
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      # Mount the SQLite database file and uploads directory so data persists across container rebuilds
+      - ./recipes.db:/app/recipes.db
+      - ./uploads:/app/uploads
+    restart: always

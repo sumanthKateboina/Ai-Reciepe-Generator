@@ -96,6 +96,42 @@ Open [http://localhost:8501](http://localhost:8501) in your browser to start gen
 
 ---
 
+## 🐳 Running with Docker
+
+You can run the application in a self-contained container using the provided `Dockerfile` and `docker-compose.yml`.
+
+### Docker Compose (Recommended)
+1. Build and start the container:
+   ```bash
+   docker-compose up --build -d
+   ```
+2. The application will be running at [http://localhost:8501](http://localhost:8501).
+
+### Standalone Docker Build
+1. Build the image:
+   ```bash
+   docker build -t ai-recipe-generator .
+   ```
+2. Run the container, passing your Groq API Key:
+   ```bash
+   docker run -p 8501:8501 -e GROQ_API_KEY="your_api_key_here" ai-recipe-generator
+   ```
+
+---
+
+## ☁️ Cloud Deployment Guides
+
+### 1. Render or Railway (Docker Container)
+These platforms can read the `Dockerfile` automatically:
+1. Connect your GitHub repository to [Render](https://render.com) or [Railway](https://railway.app).
+2. Create a new **Web Service** (Render) or **Service** (Railway).
+3. Set the build/runtime environment to **Docker**.
+4. Define the Environment Variable in their panel:
+   - `GROQ_API_KEY`: `<Your Groq API Key>`
+5. Deploy! The container will build and expose port `8501` automatically.
+
+---
+
 ## 🔒 Security Notice
 The `.env` file containing your private **Groq API Key** and your local database (`recipes.db`) are automatically excluded from version control by the `.gitignore` configuration. Never commit these files to public repositories.
 
