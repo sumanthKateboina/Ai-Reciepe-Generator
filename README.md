@@ -5,7 +5,8 @@ An elegant, fully featured AI-powered recipe generator application built with **
 Never open your fridge and wonder what to cook again. Simply snap or upload a photo of your available ingredients, and let the AI instantly suggest or generate complete recipes tailored to your dietary preferences.
 
 ### 🔗 Quick Launch Links
-* **Localhost Web App**: [http://localhost:8501](http://localhost:8501)
+* **Live Web Application**: [https://ai-reciepe-generator-sumanthkateboina.streamlit.app/](https://ai-reciepe-generator-sumanthkateboina.streamlit.app/) (For anyone to use instantly)
+* **Localhost Web App**: [http://localhost:8501](http://localhost:8501) (Only works on your computer when running locally)
 
 ---
 
