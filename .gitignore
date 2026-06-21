@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment configuration (Contains private Groq API Key)
+.env
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Streamlit config and cache
+.streamlit/
+.streamlit/config.toml
+
+# Temp uploads
+uploads/*
+!uploads/
+
+# Python Virtual Environments
+venv/
+.venv/
+env/
